@@ -1,0 +1,17 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <%= image_tag("logo.png", :alt => "logo") %>
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right">
+    <% if current_user.nil? %>
+      <%= link_to "sign_in", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "sign_up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% else %>
+      <%= link_to "sign_out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= image_tag("user.png", :class => "avatar dropdown-toggle", :id =>"navbar-wagon-menu", :"data-toggle" => "dropdown") %>
+    <% end %>
+  </div>
+</div>
