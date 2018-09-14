@@ -1,0 +1,14 @@
+Metrics/LineLength:
+  Max: 120 #default is 80
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'node_modules/**/*' #webpacker & rails 5.1
+
