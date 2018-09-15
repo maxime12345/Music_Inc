@@ -2,7 +2,12 @@
 
 class AlbumsController < ApplicationController
   def index
-    @albums = Album.all
+    if params[:q].present?
+      sql_query = "albums.#{params[:critere]} @@ :q"
+      @albums = Album.where(sql_query, q: "%#{params[:q]}%")
+    else
+      @albums = Album.all
+    end
     @albums = @albums.paginate(page: params[:page], per_page: 5)
   end
 
