@@ -47,6 +47,7 @@ gem 'cloudinary'
 gem 'devise'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
