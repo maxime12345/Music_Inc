@@ -23,9 +23,18 @@ class AlbumsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @album = Album.find(params[:id])
+  end
 
-  def update; end
+  def update
+    @album = Album.find(params[:id])
+    if current_user == @album.user && @album.update(album_params)
+      redirect_to album_path(@album)
+    else
+      render :edit
+    end
+  end
 
   def destroy; end
 
