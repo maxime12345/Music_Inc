@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class AlbumsController < ApplicationController
-  def index; end
+  def index
+    @albums = Album.all
+  end
 
   def show; end
 
