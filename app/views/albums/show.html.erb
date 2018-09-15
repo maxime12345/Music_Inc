@@ -1,2 +1,30 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<div class="container">
+  <div class="show-title">
+    <h1><%= @album.author.upcase %></h1>
+    -
+    <h4><%= @album.title %></h4>
+  </div>
+  <div class="show-contenu">
+    <div class="show-image-link">
+      <%= cl_image_tag @album.photo, height: 300, width: 300, crop: :fill %>
+    </div>
+    <p><%= @album.description %></p>
+  </div>
+  <div class="show-action">
+    <div>
+      <%= link_to albums_path do %>
+        <i class="far fa-arrow-alt-circle-left"></i>
+      <% end %>
+    </div>
+    <% if current_user == @album.user %>
+      <div class="show-action-autorized">
+        <%= link_to edit_album_path(@album) do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to album_path(@album), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
