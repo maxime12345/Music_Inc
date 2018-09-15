@@ -1,0 +1,6 @@
+<%= link_to(album_path(album)) do %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= album.photo %>);">
+    <h4 class="text-hidden"><%= album.author.upcase %></h4>
+    <h6 class="text-hidden"><%= album.title %></h6>
+  </div>
+<% end %>
