@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 puts 'destroying all users...'
 User.destroy_all
 puts 'users destroyed !'

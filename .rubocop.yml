@@ -12,4 +12,5 @@ AllCops:
     - 'bin/*'
     - 'node_modules/**/*' #webpacker & rails 5.1
     - 'config/initializers/*'
+    - 'db/schema.rb'
 
