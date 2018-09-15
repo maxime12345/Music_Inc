@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Album < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
