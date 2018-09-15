@@ -1,0 +1,21 @@
+.previous_page, .next_page {
+  display: none;
+}
+
+.pagination {
+  display: block;
+  margin: 25px auto;
+  width: 100px;
+}
+
+.pagination a {
+  color: rgba(0,0,0,0.3);
+}
+
+.pagination a:hover {
+  color: rgba(0,0,0,0.7);
+}
+
+.current {
+  font-style : normal;
+}

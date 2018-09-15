@@ -3,6 +3,7 @@
 class AlbumsController < ApplicationController
   def index
     @albums = Album.all
+    @albums = @albums.paginate(page: params[:page], per_page: 5)
   end
 
   def show
