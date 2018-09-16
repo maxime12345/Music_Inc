@@ -1,35 +1,36 @@
+---
 fr:
   activerecord:
-    models:
-      album: "album"
     attributes:
       album:
-        title: "titre"
-        description: "description"
-        author: "auteur"
-        photo: "photo"
-  simple_form:
-      labels:
-        album:
-          title: "Titre"
-          description: "Description"
-          author: "Auteur"
-          photo: "Photo"
+        author: auteur
+        description: description
+        photo: photo
+        title: titre
+    models:
+      album: album
   albums:
     edit:
-      udpate: "MODIFIER L'ALBUM"
+      udpate: MODIFIER L'ALBUM
     index:
-      add: "ajouter un album"
+      add: ajouter un album
     new:
-      add: "AJOUTER UN ALBUM"
+      add: AJOUTER UN ALBUM
     show:
-      sure: "Etes-vous sûr?"
-  search_by: "Rechercher par"
-  search: "Rechercher"
-  title: "titre"
-  author: "auteur"
-  description: "description"
-  keyword: "mot-clé"
-  sign_in: "connexion"
-  sign_up: "inscription"
-  sign_out: "déconnexion"
+      sure: Etes-vous sûr?
+  author: auteur
+  description: description
+  keyword: mot-clé
+  search: Rechercher
+  search_by: Rechercher par
+  sign_in: connexion
+  sign_out: déconnexion
+  sign_up: inscription
+  simple_form:
+    labels:
+      album:
+        author: Auteur
+        description: Description
+        photo: Photo
+        title: Titre
+  title: titre

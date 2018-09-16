@@ -1,19 +1,20 @@
+---
 en:
   albums:
-      edit:
-        udpate: "UPDATE ALBUM"
-      index:
-        add: "add a new album"
-      new:
-        add: "ADD A NEW ALBUM"
-      show:
-        sure: "Are you sure?"
-  search_by: "Search by"
-  search: "Search"
-  title: "title"
-  author: "author"
-  description: "description"
-  keyword: "keyword"
-  sign_in: "sign in"
-  sign_up: "sign up"
-  sign_out: "sign out"
+    edit:
+      udpate: UPDATE ALBUM
+    index:
+      add: add a new album
+    new:
+      add: ADD A NEW ALBUM
+    show:
+      sure: Are you sure?
+  author: author
+  description: description
+  keyword: keyword
+  search: Search
+  search_by: Search by
+  sign_in: sign in
+  sign_out: sign out
+  sign_up: sign up
+  title: title
