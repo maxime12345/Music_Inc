@@ -1,2 +1,35 @@
 fr:
-  hello: "Hello world"
+  activerecord:
+    models:
+      album: "album"
+    attributes:
+      restaurant:
+        title: "titre"
+        description: "description"
+        author: "auteur"
+        photo: "photo"
+  simple_form:
+      labels:
+        album:
+          title: "Titre"
+          description: "Description"
+          author: "Auteur"
+          photo: "Photo"
+  albums:
+    edit:
+      udpate: "MODIFIER L'ALBUM"
+    index:
+      add: "ajouter un album"
+    new:
+      add: "AJOUTER UN ALBUM"
+    show:
+      sure: "Etes-vous sûr?"
+  search_by: "Rechercher par"
+  search: "Rechercher"
+  title: "titre"
+  author: "auteur"
+  description: "description"
+  keyword: "mot-clé"
+  sign_in: "connexion"
+  sign_up: "inscription"
+  sign_out: "déconnexion"

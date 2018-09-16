@@ -1,2 +1,19 @@
 en:
-  hello: "Hello world"
+  albums:
+      edit:
+        udpate: "UPDATE ALBUM"
+      index:
+        add: "add a new album"
+      new:
+        add: "ADD A NEW ALBUM"
+      show:
+        sure: "Are you sure?"
+  search_by: "Search by"
+  search: "Search"
+  title: "title"
+  author: "author"
+  description: "description"
+  keyword: "keyword"
+  sign_in: "sign in"
+  sign_up: "sign up"
+  sign_out: "sign out"

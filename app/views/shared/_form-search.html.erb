@@ -1,12 +1,12 @@
 <div class="search-form">
   <%= form_tag albums_path, method: :get do %>
-    <%= label_tag(:query, "search by") %>
+    <%= label_tag(:query, t('search_by')) %>
     <%= select_tag(:critere, options_for_select([
-      ["title", :title],
-      ["author", :author],
-      ["description", :description]
+      [t('title'), :title],
+      [t('author'), :author],
+      [t('description'), :description]
     ], params[:critere])) %>
-    <%= text_field_tag :q, params[:q], placeholder: "keyword" %>
-    <%= submit_tag("search", class: "btn") %>
+    <%= text_field_tag :q, params[:q], placeholder: t('keyword') %>
+    <%= submit_tag(t('search'), class: "btn") %>
   <% end %>
 </div>
