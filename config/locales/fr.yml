@@ -3,7 +3,7 @@ fr:
     models:
       album: "album"
     attributes:
-      restaurant:
+      album:
         title: "titre"
         description: "description"
         author: "auteur"
