@@ -1,3 +1,11 @@
-<h1><%= t(".add") %></h1>
-
-<%= render 'form', album: @album %>
+<div class="container">
+  <h1><%= t(".add") %></h1>
+  <%= render 'form', album: @album %>
+  <div class="show-action">
+    <div>
+      <%= link_to albums_path do %>
+        <i class="far fa-arrow-alt-circle-left"></i>
+      <% end %>
+    </div>
+  </div>
+</div>

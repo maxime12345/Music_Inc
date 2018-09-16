@@ -2,3 +2,17 @@
 a:hover {
   text-decoration: none
 }
+
+.index h1 {
+  font-size: 72px;
+  width: 400px;
+  margin: 50px auto;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .index h1 {
+  font-size: 40px;
+  width: 250px;
+  }
+}
