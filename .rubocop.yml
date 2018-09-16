@@ -14,3 +14,6 @@ AllCops:
     - 'config/initializers/*'
     - 'db/schema.rb'
 
+Rails/Output:
+  Exclude:
+    - 'db/seeds.rb'

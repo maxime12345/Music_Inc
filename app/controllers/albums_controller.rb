@@ -55,5 +55,4 @@ class AlbumsController < ApplicationController
   def album_params
     params.require(:album).permit(:title, :description, :author, :photo)
   end
-
 end
