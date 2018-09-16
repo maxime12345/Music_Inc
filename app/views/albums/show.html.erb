@@ -21,7 +21,7 @@
         <%= link_to edit_album_path(@album) do %>
           <i class="far fa-edit"></i>
         <% end %>
-        <%= link_to album_path(@album), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <%= link_to album_path(@album), method: :delete, data: { confirm: t('.sure') } do %>
           <i class="far fa-trash-alt"></i>
         <% end %>
       </div>
