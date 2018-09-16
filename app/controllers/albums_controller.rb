@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class AlbumsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
     if params[:q].present?
       sql_query = "albums.#{params[:critere]} @@ :q"
