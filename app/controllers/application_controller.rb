@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :set_locale
+  protect_from_forgery
+  before_action :authenticate_user!, :set_locale
 
   def set_locale
     I18n.locale = params.fetch(:locale, I18n.default_locale).to_sym
