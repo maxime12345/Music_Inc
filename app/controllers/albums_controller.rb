@@ -37,17 +37,25 @@ class AlbumsController < ApplicationController
 
   def update
     @album = Album.find(params[:id])
-    if current_user == @album.user && @album.update(album_params)
-      redirect_to album_path(@album)
+    if current_user == @album.user
+      if @album.update(album_params)
+        redirect_to album_path(@album)
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to root_path
     end
   end
 
   def destroy
     @album = Album.find(params[:id])
-    @album.destroy if current_user == @album.user
-    redirect_to albums_path
+    if current_user == @album.user
+      @album.destroy
+      redirect_to albums_path
+    else
+      redirect_to root_path
+    end
   end
 
   private
