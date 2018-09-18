@@ -2,6 +2,7 @@
 
 class AlbumsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_album, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:q].present?
@@ -14,11 +15,13 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    @album = Album.find(params[:id])
   end
 
   def new
     @album = Album.new
+  end
+
+  def edit
   end
 
   def create
@@ -31,12 +34,7 @@ class AlbumsController < ApplicationController
     end
   end
 
-  def edit
-    @album = Album.find(params[:id])
-  end
-
   def update
-    @album = Album.find(params[:id])
     if current_user == @album.user
       if @album.update(album_params)
         redirect_to album_path(@album)
@@ -49,7 +47,6 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-    @album = Album.find(params[:id])
     if current_user == @album.user
       @album.destroy
       redirect_to albums_path
@@ -59,6 +56,10 @@ class AlbumsController < ApplicationController
   end
 
   private
+
+  def set_album
+    @album = Album.find(params[:id])
+  end
 
   def album_params
     params.require(:album).permit(:title, :description, :author, :photo)
