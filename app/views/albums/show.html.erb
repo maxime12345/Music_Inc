@@ -18,10 +18,10 @@
     </div>
     <% if current_user == @album.user %>
       <div class="show-action-autorized">
-        <%= link_to edit_album_path(@album) do %>
+        <%= link_to edit_album_path(@album), class: 'edit' do %>
           <i class="far fa-edit"></i>
         <% end %>
-        <%= link_to album_path(@album), method: :delete, data: { confirm: t('.sure') } do %>
+        <%= link_to album_path(@album), class: 'delete', method: :delete, data: { confirm: t('.sure') } do %>
           <i class="far fa-trash-alt"></i>
         <% end %>
       </div>
