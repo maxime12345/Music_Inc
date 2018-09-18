@@ -90,6 +90,12 @@ RSpec.describe AlbumsController, type: :controller do
       it "returns a 302 response" do
         album_params = FactoryBot.attributes_for(:album)
         post :create, params: { album: album_params }
+        expect(response).to have_http_status "302"
+      end
+
+      it "redirects to the sign-in page" do
+        album_params = FactoryBot.attributes_for(:album)
+        patch :create, params: { album: album_params }
         expect(response).to redirect_to "/users/sign_in"
       end
     end
@@ -147,14 +153,14 @@ RSpec.describe AlbumsController, type: :controller do
       end
 
       it "returns a 302 response" do
-        project_params = FactoryBot.attributes_for(:album)
-        patch :update, params: { id: @album.id, album: project_params }
+        album_params = FactoryBot.attributes_for(:album)
+        patch :update, params: { id: @album.id, album: album_params }
         expect(response).to have_http_status "302"
       end
 
       it "redirects to the sign-in page" do
-        project_params = FactoryBot.attributes_for(:album)
-        patch :update, params: { id: @album.id, album: project_params }
+        album_params = FactoryBot.attributes_for(:album)
+        patch :update, params: { id: @album.id, album: album_params }
         expect(response).to redirect_to "/users/sign_in"
       end
 
@@ -189,7 +195,7 @@ RSpec.describe AlbumsController, type: :controller do
         @album = FactoryBot.create(:album, user: other_user)
       end
 
-      it "does not delete the project" do
+      it "does not delete the album" do
         sign_in @user
         expect {
           delete :destroy, params: { id: @album.id }

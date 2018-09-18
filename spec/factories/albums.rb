@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :album do
-    title 'Thriller'
+    sequence(:title) { |n| "Thriller#{n}" }
     description 'lorem ipsum'
     author 'Michael Jackson'
     association :user
