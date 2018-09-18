@@ -1,6 +1,8 @@
 require 'rails_helper'
+require './spec/support/login_support'
 
 RSpec.feature "Albums", type: :feature do
+
   scenario "as a guest, I can sign up" do
     visit root_path
     click_link "sign up"
@@ -15,12 +17,8 @@ RSpec.feature "Albums", type: :feature do
   scenario "as a guest, I can sign in" do
     user = FactoryBot.create(:user)
 
-    visit root_path
-    click_link "sign in"
+    sign_in_as user
 
-    fill_in "Email", with: user.email
-    fill_in "user_password", with: user.password
-    click_button "Log in"
     expect(page).to have_content "Signed in successfully"
   end
 
@@ -58,11 +56,7 @@ RSpec.feature "Albums", type: :feature do
   scenario "as a connected user, I can creates a new album" do
     user = FactoryBot.create(:user)
 
-    visit root_path
-    click_link "sign in"
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Log in"
+    sign_in_as user
 
     expect {
       click_link "add a new album"
@@ -81,11 +75,7 @@ RSpec.feature "Albums", type: :feature do
     user = FactoryBot.create(:user)
     album = FactoryBot.create(:album, user: user)
 
-    visit root_path
-    click_link "sign in"
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Log in"
+    sign_in_as user
 
     click_link "MICHAEL JACKSON"
 
@@ -105,11 +95,7 @@ RSpec.feature "Albums", type: :feature do
     user = FactoryBot.create(:user)
     album = FactoryBot.create(:album, user: user)
 
-    visit root_path
-    click_link "sign in"
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Log in"
+    sign_in_as user
 
     click_link "MICHAEL JACKSON"
     click_on(class: 'delete')
