@@ -2,7 +2,7 @@
 
 class AlbumsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_album, only: %i[show edit update destroy]
 
   def index
     if params[:q].present?
@@ -14,15 +14,13 @@ class AlbumsController < ApplicationController
     @albums = @albums.paginate(page: params[:page], per_page: 5)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @album = Album.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @album = Album.new(album_params)

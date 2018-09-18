@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :album do
     sequence(:title) { |n| "Thriller#{n}" }
@@ -9,5 +11,4 @@ FactoryBot.define do
   trait :invalid do
     title nil
   end
-
 end
