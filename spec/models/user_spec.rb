@@ -7,22 +7,10 @@ RSpec.describe User, type: :model do
     expect(FactoryBot.create(:user)).to be_valid
   end
 
-  it 'is invalid without an email address' do
-    user = FactoryBot.build(:user, email: nil)
-    user.valid?
-    expect(user.errors[:email]).to include("can't be blank")
-  end
+  it { should validate_presence_of(:email) }
+  it { should validate_uniqueness_of(:email).ignoring_case_sensitivity }
 
-  it 'is invalid without a password' do
-    user = FactoryBot.build(:user, password: nil)
-    user.valid?
-    expect(user.errors[:password]).to include("can't be blank")
-  end
+  it { should validate_presence_of(:password) }
 
-  it 'is invalid with a duplicate email address' do
-    FactoryBot.create(:user, email: 'toto@example.com')
-    user = FactoryBot.build(:user, email: 'toto@example.com')
-    user.valid?
-    expect(user.errors[:email]).to include('has already been taken')
-  end
+  it { should have_many(:albums) }
 end
