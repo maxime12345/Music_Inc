@@ -17,3 +17,7 @@ AllCops:
 Rails/Output:
   Exclude:
     - 'db/seeds.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
